@@ -1,0 +1,8 @@
+{
+  "projects": {
+    "default": "screenshot-ui",
+    "staging": "screenshot-ui"
+  },
+  "targets": {},
+  "etags": {}
+}

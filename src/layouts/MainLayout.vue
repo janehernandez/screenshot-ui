@@ -23,7 +23,7 @@
     <q-footer elevated class="bg-grey-8 text-white">
       <q-toolbar class="justify-center">
         <small>
-          Copyright © 2023 by Dan Jomel Somera. All Rights Reserved.
+          Copyright © 2023 by JD Team. All Rights Reserved.
         </small>
       </q-toolbar>
     </q-footer>
