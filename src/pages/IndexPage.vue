@@ -31,6 +31,14 @@ export default {
       showAuth.value = false
       auth.value = localStorage.getItem('AUTH_INFO')
       const info = JSON.parse(localStorage.getItem('AUTH_INFO'));
+      if (!info || typeof info !== 'object') {
+        localStorage.removeItem('AUTH_INFO')
+        showAuth.value = true
+        auth.value = null
+
+        return
+      }
+
       const { expiry } = info
       const expiryDate = new Date(expiry.substring(0, 10));
       const currentDate = new Date();
@@ -70,8 +78,6 @@ export default {
           delay: 400 // ms
         })
 
-        localStorage.setItem('AUTH_INFO', auth.value)
-
         await api.get(`/screenshot?auth_info=${auth.value}&url=${url.value}`)
           .then(async (response) => {
             const { path, name } = response.data
@@ -89,6 +95,9 @@ export default {
               $q.loading.hide()
               url.value = null
 
+              localStorage.setItem('AUTH_INFO', auth.value)
+              showAuth.value = false
+              auth.value = localStorage.getItem('AUTH_INFO')
               $q.notify({
                 color: 'green-4',
                 position: 'top',
