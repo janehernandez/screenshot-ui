@@ -1,9 +1,9 @@
 {
   "name": "screenshot-ui",
   "version": "0.0.1",
-  "description": "A free project intended for company use (sana magbayad sila)",
+  "description": "A free project intended for company use",
   "productName": "Screenshot",
-  "author": "Jane Hernandez <kitkatdonat@gmail.com>",
+  "author": "Ajeng <kitkatdonat@gmail.com>",
   "private": true,
   "scripts": {
     "lint": "eslint --ext .js,.vue ./",
